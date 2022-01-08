@@ -1,141 +1,114 @@
+# Hướng dẫn học có hệ thống về phát triển Android OpenGLES 3.0
 
-# Android OpenGLES 3.0 开发系统性学习教程
+[! [Giấy phép] (https://img.shields.io/badge/License-Apache%202.0-blue.svg)] (https://github.com/githubhaohao/NDK_OpenGLES_3_0/blob/master/LICENSE.txt)
+! [Xây dựng] (https://img.shields.io/badge/build-passing-brightgreen)
+[! [apk] (https://img.shields.io/badge/APK-download-green.svg)] (https://github.com/githubhaohao/NDK_OpenGLES_3_0/raw/master/doc/OepnGLES.apk)
 
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://github.com/githubhaohao/NDK_OpenGLES_3_0/blob/master/LICENSE.txt)
-![Build](https://img.shields.io/badge/build-passing-brightgreen)
-[![apk](https://img.shields.io/badge/APK-download-green.svg)](https://github.com/githubhaohao/NDK_OpenGLES_3_0/raw/master/doc/OepnGLES.apk)
 
+Lưu ý: Vui lòng sử dụng Android Studio 4.1+, NDK r21, một số hiệu ứng 3D của Ốp lưng được kích hoạt bằng cử chỉ (xoay và thu phóng)
 
-备注: 请使用 Android Studio 4.1+ ，NDK r21，其中一些 Case 的 3D 效果是通过手势触发（转动和缩放）
 
+## kế hoạch
 
-## 展示图
 
+! [beat_heart] (https://github.com/githubhaohao/NDK_OpenGLES_3_0/blob/master/gif/beating_heart.gif)
+! [poly_3d_model] (https://github.com/githubhaohao/NDK_OpenGLES_3_0/blob/master/gif/poly.gif)
 
-![beating_heart](https://github.com/githubhaohao/NDK_OpenGLES_3_0/blob/master/gif/beating_heart.gif)
-![poly_3d_model](https://github.com/githubhaohao/NDK_OpenGLES_3_0/blob/master/gif/poly.gif)
+! [ogl_head] (https://github.com/githubhaohao/NDK_OpenGLES_3_0/blob/master/gif/head.gif)
 
-![ogl_head](https://github.com/githubhaohao/NDK_OpenGLES_3_0/blob/master/gif/head.gif)
 
+## Khái niệm cơ bản
 
-## 基础篇
+- [Phát triển OpenGL ES 3.0 (01): Vẽ hình tam giác] (https://blog.csdn.net/Kennethdroid/article/details/95622391)
 
-- [OpenGL ES 3.0 开发（01）：绘制一个三角形](https://blog.csdn.net/Kennethdroid/article/details/95622391)
+- [Phát triển OpenGL ES 3.0 (02): Bản đồ kết cấu] (https://blog.csdn.net/Kennethdroid/article/details/96887637)
 
-- [OpenGL ES 3.0 开发（02）：纹理映射](https://blog.csdn.net/Kennethdroid/article/details/96887637)
+- [Phát triển OpenGL ES 3.0 (03): Kết xuất YUV] (https://blog.csdn.net/Kennethdroid/article/details/97153407)
 
-- [OpenGL ES 3.0 开发（03）：YUV 渲染](https://blog.csdn.net/Kennethdroid/article/details/97153407)
+- [Phát triển OpenGL ES 3.0 (04): VBO, EBO và VAO] (https://blog.csdn.net/Kennethdroid/article/details/98088890)
 
-- [OpenGL ES 3.0 开发（04）：VBO、EBO 和 VAO](https://blog.csdn.net/Kennethdroid/article/details/98088890)
+- [Phát triển OpenGL ES 3.0 (05): Kết xuất ngoài màn hình FBO] (https://blog.csdn.net/Kennethdroid/article/details/98883854)
 
-- [OpenGL ES 3.0 开发（05）：FBO 离屏渲染](https://blog.csdn.net/Kennethdroid/article/details/98883854)
+- [Phát triển OpenGL ES 3.0 (06): EGL] (https://blog.csdn.net/Kennethdroid/article/details/99655635)
 
-- [OpenGL ES 3.0 开发（06）：EGL](https://blog.csdn.net/Kennethdroid/article/details/99655635)
+- [Phát triển OpenGL ES 3.0 (07): Phản hồi chuyển đổi] (https://blog.csdn.net/Kennethdroid/article/details/100083599)
 
-- [OpenGL ES 3.0 开发（07）：Transform Feedback](https://blog.csdn.net/Kennethdroid/article/details/100083599)
+- [Phát triển OpenGL ES 3.0 (08): Hệ tọa độ] (https://blog.csdn.net/Kennethdroid/article/details/100898155)
 
-- [OpenGL ES 3.0 开发（08）：坐标系统](https://blog.csdn.net/Kennethdroid/article/details/100898155)
+- [Phát triển OpenGL ES 3.0 (09): Kiến thức cơ bản về ánh sáng] (https://blog.csdn.net/Kennethdroid/article/details/101220947)
 
-- [OpenGL ES 3.0 开发（09）：光照基础](https://blog.csdn.net/Kennethdroid/article/details/101220947)
+- [Phát triển OpenGL ES 3.0 (10): Kiểm tra độ sâu] (https://blog.csdn.net/Kennethdroid/article/details/101709694)
 
-- [OpenGL ES 3.0 开发（10）：深度测试](https://blog.csdn.net/Kennethdroid/article/details/101709694)
+- [Phát triển OpenGL ES 3.0 (11): Kiểm tra mẫu] (https://blog.csdn.net/Kennethdroid/article/details/102533260)
 
-- [OpenGL ES 3.0 开发（11）：模板测试](https://blog.csdn.net/Kennethdroid/article/details/102533260)
+- [Phát triển OpenGL ES 3.0 (12): Kết hợp] (https://blog.csdn.net/Kennethdroid/article/details/102630858)
 
-- [OpenGL ES 3.0 开发（12）：混合](https://blog.csdn.net/Kennethdroid/article/details/102630858)
+- [OpenGL ES 3.0 Development (13): Instancing] (https://blog.csdn.net/Kennethdroid/article/details/102770813)
 
-- [OpenGL ES 3.0 开发（13）：实例化（Instancing）](https://blog.csdn.net/Kennethdroid/article/details/102770813)
+- [Phát triển OpenGL ES 3.0 (14): Hạt] (https://blog.csdn.net/Kennethdroid/article/details/102881654)
 
-- [OpenGL ES 3.0 开发（14）：粒子（Particles）](https://blog.csdn.net/Kennethdroid/article/details/102881654)
+- [Phát triển OpenGL ES 3.0 (15): Cubemap (Skybox)] (https://blog.csdn.net/Kennethdroid/article/details/102991524)
 
-- [OpenGL ES 3.0 开发（15）：立方体贴图（天空盒）](https://blog.csdn.net/Kennethdroid/article/details/102991524)
+- [Phát triển OpenGL ES 3.0 (16): Xem trước máy ảnh] (https://blog.csdn.net/Kennethdroid/article/details/103189489)
 
-- [OpenGL ES 3.0 开发（16）：相机预览](https://blog.csdn.net/Kennethdroid/article/details/103189489)
+- [OpenGL ES 3.0 Development (17): Camera Basic Filters] (https://blog.csdn.net/Kennethdroid/article/details/103335598)
 
-- [OpenGL ES 3.0 开发（17）：相机基础滤镜](https://blog.csdn.net/Kennethdroid/article/details/103335598)
+- [OpenGL ES 3.0 Development (18): Camera LUT Filter] (https://blog.csdn.net/Kennethdroid/article/details/103355129)
 
-- [OpenGL ES 3.0 开发（18）：相机 LUT 滤镜](https://blog.csdn.net/Kennethdroid/article/details/103355129)
+- [Phát triển OpenGL ES 3.0 (19): bộ lọc rung máy ảnh] (https://blog.csdn.net/Kennethdroid/article/details/103449935)
 
-- [OpenGL ES 3.0 开发（19）：相机抖音滤镜](https://blog.csdn.net/Kennethdroid/article/details/103449935)
+- [Phát triển OpenGL ES 3.0 (20): Mô hình 3D] (https://blog.csdn.net/Kennethdroid/article/details/103771970)
 
-- [OpenGL ES 3.0 开发（20）：3D 模型](https://blog.csdn.net/Kennethdroid/article/details/103771970)
+- [Phát triển OpenGL ES 3.0 (21): Tải và hiển thị mô hình 3D] (https://blog.csdn.net/Kennethdroid/article/details/103825593)
 
-- [OpenGL ES 3.0 开发（21）：3D 模型加载和渲染](https://blog.csdn.net/Kennethdroid/article/details/103825593)
+- [Phát triển OpenGL ES 3.0 (22): PBO] (https://blog.csdn.net/Kennethdroid/article/details/103931627)
 
-- [OpenGL ES 3.0 开发（22）：PBO](https://blog.csdn.net/Kennethdroid/article/details/103931627)
+- [Phát triển OpenGL ES 3.0 (23): Nhiều mục tiêu kết xuất (MRT)] (https://blog.csdn.net/Kennethdroid/article/details/108873665)
 
-- [OpenGL ES 3.0 开发（23）：多重渲染目标（MRT）](https://blog.csdn.net/Kennethdroid/article/details/108873665)
+- [Phát triển OpenGL ES 3.0 (24): Truyền khối bit bộ đệm khung (Blit)] (https://blog.csdn.net/Kennethdroid/article/details/109032497)
 
-- [OpenGL ES 3.0 开发（24）：帧缓冲区位块传送（Blit）](https://blog.csdn.net/Kennethdroid/article/details/109032497)
+- [Phát triển OpenGL ES 3.0 (25): TBO (GLES 3.1)] (https://blog.csdn.net/Kennethdroid/article/details/109749018)
 
-- [OpenGL ES 3.0 开发（25）：TBO（GLES 3.1）](https://blog.csdn.net/Kennethdroid/article/details/109749018)
+- [Phát triển OpenGL ES 3.0 (26): UBO (GLES 3.2)] (https://blog.csdn.net/Kennethdroid/article/details/109749018)
 
-- [OpenGL ES 3.0 开发（26）：UBO（GLES 3.2）](https://blog.csdn.net/Kennethdroid/article/details/109749018)
 
+## kế hoạch
 
-## 展示图
+! [avatar] (https://github.com/githubhaohao/NDK_OpenGLES_3_0/blob/master/gif/avatar.gif)
+! [board] (https://github.com/githubhaohao/NDK_OpenGLES_3_0/blob/master/gif/draw_board.gif)
 
-![avatar](https://github.com/githubhaohao/NDK_OpenGLES_3_0/blob/master/gif/avatar.gif)
-![board](https://github.com/githubhaohao/NDK_OpenGLES_3_0/blob/master/gif/draw_board.gif)
+## Đơn xin
 
-## 应用篇
+- [Android OpenGL ES nhận ra các hiệu ứng đặc biệt khiến tim đập mạnh] (https://blog.csdn.net/Kennethdroid/article/details/104536532)
 
-- [Android OpenGL ES 实现心动特效](https://blog.csdn.net/Kennethdroid/article/details/104536532)
+- [Android OpenGL ES nhận ra tác dụng của việc giảm béo và dài chân] (https://blog.csdn.net/Kennethdroid/article/details/104546234)
 
-- [Android OpenGL ES 实现瘦身大长腿效果](https://blog.csdn.net/Kennethdroid/article/details/104546234)
+- [Android OpenGL ES vẽ đường cong Bezier] (https://blog.csdn.net/Kennethdroid/article/details/104721096)
 
-- [Android OpenGL ES 绘制贝塞尔曲线](https://blog.csdn.net/Kennethdroid/article/details/104721096)
+- [Android OpenGL ES nhận ra hiệu ứng của khuôn mặt gầy và đôi mắt to] (https://blog.csdn.net/Kennethdroid/article/details/104907763)
 
-- [Android OpenGL ES 实现瘦脸大眼效果](https://blog.csdn.net/Kennethdroid/article/details/104907763)
+- [Android OpenGL ES nhận ra biến dạng đầu và hiệu ứng lắc đầu] (https://blog.csdn.net/Kennethdroid/article/details/105208054)
 
-- [Android OpenGL ES 实现头部形变和头部晃动效果](https://blog.csdn.net/Kennethdroid/article/details/105208054)
+- [Android OpenGL ES hiện thực hóa hình ảnh của âm thanh thời gian thực] (https://blog.csdn.net/Kennethdroid/article/details/106128767)
 
-- [Android OpenGL ES 实现实时音频的可视化](https://blog.csdn.net/Kennethdroid/article/details/106128767)
+- [Android OpenGL ES triển khai chức năng thẻ cào và máy tính bảng] (https://blog.csdn.net/Kennethdroid/article/details/106339286)
 
-- [Android OpenGL ES 实现刮刮卡和手写板功能](https://blog.csdn.net/Kennethdroid/article/details/106339286)
+- [Android OpenGL ES triển khai hiệu ứng Hình đại diện 3D] (https://blog.csdn.net/Kennethdroid/article/details/106423475)
 
-- [Android OpenGL ES 实现 3D 阿凡达效果](https://blog.csdn.net/Kennethdroid/article/details/106423475)
+- [Android OpenGL ES nhận ra hiệu ứng gợn sóng động (gợn nước)] (https://blog.csdn.net/Kennethdroid/article/details/106556584)
 
-- [Android OpenGL ES 实现动态（水波纹）涟漪效果](https://blog.csdn.net/Kennethdroid/article/details/106556584)
+- [Công cụ gỡ lỗi Android OpenGL ES] (https://blog.csdn.net/Kennethdroid/article/details/106695602)
 
-- [Android OpenGL ES 调试工具](https://blog.csdn.net/Kennethdroid/article/details/106695602)
+- [Android OpenGL ES chuyển các mảng lớn sang các chương trình tạo bóng] (https://blog.csdn.net/Kennethdroid/article/details/109749018)
 
-- [Android OpenGL ES 传输超大数组给着色器程序](https://blog.csdn.net/Kennethdroid/article/details/109749018)
+- [Đối tượng OpenGL ES thường được hỏi trong các cuộc phỏng vấn là gì? ] (https://blog.csdn.net/Kennethdroid/article/details/112379836)
 
-- [面试中经常被问到的 OpenGL ES 对象，你知道的有哪些？](https://blog.csdn.net/Kennethdroid/article/details/112379836)
+- [Cái nào tốt hơn để hiển thị hình ảnh trong Android OpenGL ES] (https://blog.csdn.net/Kennethdroid/article/details/109339906)
 
-- [Android OpenGL ES 渲染图像读取哪家强](https://blog.csdn.net/Kennethdroid/article/details/109339906)
+- [Sử dụng OpenGL ES để tạo bộ lọc vẽ nhân vật cho trình phát video và máy ảnh] (https://blog.csdn.net/Kennethdroid/article/details/113379112)
 
-- [利用 OpenGL ES 给视频播放器和相机做个字符画滤镜](https://blog.csdn.net/Kennethdroid/article/details/113379112)
+- [Chuyển đổi định dạng hình ảnh từ RGB sang YUV bằng OpenGL] (https://t.1yb.co/uvfH)
 
-- [使用 OpenGL 实现 RGB 到 YUV 的图像格式转换](https://t.1yb.co/uvfH)
+- [Khi OpenGL ES chia sẻ bối cảnh, những tài nguyên nào có thể được chia sẻ? ] (https://t.1yb.co/uvfS)
 
-- [OpenGL ES 共享上下文时，可以共享哪些资源？](https://t.1yb.co/uvfS)
-
-- [OpenGL ES 文字渲染方式有几种？](http://mp.weixin.qq.com/s?__biz=MzIwNTIwMzAzNg==&mid=506682327&idx=1&sn=38f091451bb508b66933f2213ec0fb7d&chksm=0cf388e43b8401f2e115aa58b0ad8facb462363f3a1ed99604f9ea5c51b2bc815d8f237fc6e9#rd)
-
-- [OpenGL ES 文字渲染进阶：渲染中文字体](https://t.1yb.co/vezw)
-
-- [OpenGL ES + 人像抠图实现人像留色](https://t.1yb.co/z84y) 
-
-- [OpenGL ES + GLTranslations 实现各种图像转场效果](https://t.1yb.co/z8do)
-
-- [OpenGL ES 实现抖音传送带特效](https://mp.weixin.qq.com/s/Px6UeZuavqkKS0hek27vog)
-
-- [OpenGL ES 实现抖音“蓝线挑战”特效](https://juejin.cn/post/7012976724946190367)
-
-- [OpenGL ES 利用 Shader 实现 RGBA 到 NV21 图像格式转换](https://juejin.cn/post/7025223104569802789)
-
-- [OpenGL ES 修图（P 图）功能](https://juejin.cn/post/7029111228035399688)
-
-
-## 相关推荐
-
-- [Android OpenGL Camera 2.0 实现 30 种滤镜和抖音特效](https://github.com/githubhaohao/OpenGLCamera2)
-- [Android FFmpeg 音视频开发教程](http://mp.weixin.qq.com/s?__biz=MzIwNTIwMzAzNg==&mid=506681298&idx=1&sn=50177285bf0d330d0dfc4e0954d5ad12&chksm=0cf384e13b840df76f89aeb8ac76939ff32b2f9bf600729782d61698181af60d92cce61ee150#rd)
-
-## 联系交流
-有疑问或技术交流可以扫码添加**我的微信：Byte-Flow ，领取视频教程，拉你入相关技术交流群**，里面很多牛人帮你解答。
-
-![字节流动](https://github.com/githubhaohao/NDK_OpenGLES_3_0/blob/master/doc/img/accountID.jpg)
-
+- [Có bao nhiêu cách để kết xuất văn bản OpenGL ES? ] (http://mp.weixin.qq.com/s?__biz=MzIwNTIwMzAzNg==
